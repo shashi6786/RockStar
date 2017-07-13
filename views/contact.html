@@ -26,3 +26,24 @@
         </div>
     </div>
 </div>
+<div class="container" id="googleMap">
+    <div id="googleMap"></div>
+</div>
+<script>
+    function myMap() {
+        var myCenter = new google.maps.LatLng(42.1291, -80.0851);
+        var mapProp = {
+            center: myCenter,
+            zoom: 12,
+            scrollwheel: false,
+            draggable: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({
+            position: myCenter
+        });
+        marker.setMap(map);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBeMzxY_r2lBoSOA5ZAprDWHWkJGVxZPc&callback=myMap"></script>
