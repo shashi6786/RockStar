@@ -24,7 +24,7 @@
                     <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
                 </div>
                 <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" ng-model="email" required>
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="text" ng-model="email" required>
                 </div>
             </div>
             <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
@@ -33,32 +33,39 @@
                     <button class="btn pull-right" type="submit" ng-click="sendContactEmail()">Send</button>
                 </div>
             </div>
+            <input type="checkbox" ng-model="success" class="hide">
+
+            <div class="row" ng-show="success">
+                <div class="col-md-12 form-group">
+                    <div class="btn btn-success">Your message reached to me. I will get in touch soon with you my friend!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div id="googleMap"></div>
-</div>
+    <div class="container">
+        <div id="googleMap"></div>
+    </div>
 
 
-<!-- Google Map API Start -->
-<script>
-    function myMap() {
-        var myCenter = new google.maps.LatLng(42.1291, -80.0851);
-        var mapProp = {
-            center: myCenter,
-            zoom: 12,
-            scrollwheel: false,
-            draggable: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({
-            position: myCenter
-        });
-        marker.setMap(map);
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBeMzxY_r2lBoSOA5ZAprDWHWkJGVxZPc&callback=myMap"></script>
+    <!-- Google Map API Start -->
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(42.1291, -80.0851);
+            var mapProp = {
+                center: myCenter,
+                zoom: 12,
+                scrollwheel: false,
+                draggable: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBeMzxY_r2lBoSOA5ZAprDWHWkJGVxZPc&callback=myMap"></script>
 
-<!-- Google Map API end -->
+    <!-- Google Map API end -->
