@@ -10,6 +10,10 @@
                 </p>
                 <footer>Being fetched and set From Springboot Service & Azure SQL Database</footer>
             </blockquote>
+            <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+            </div>
+            <div class="fb-follow" data-href="http://www.facebook.com/shashi.sastra" data-layout="standard" data-size="small" data-show-faces="true"></div>
+
             <p><span class="glyphicon glyphicon-map-marker"></span>Erie, US</p>
             <p><span class="glyphicon glyphicon-phone"></span>Phone: +1 8143860791</p>
             <p><span class="glyphicon glyphicon-envelope"></span>Email: shashi.bhushan1@tcs.com</p>
@@ -20,21 +24,24 @@
                     <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
                 </div>
                 <div class="col-sm-6 form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" ng-model="email" required>
                 </div>
             </div>
             <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
             <div class="row">
                 <div class="col-md-12 form-group">
-                    <button class="btn pull-right" type="submit">Send</button>
+                    <button class="btn pull-right" type="submit" ng-click="sendContactEmail()">Send</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container" id="googleMap">
+<div class="container">
     <div id="googleMap"></div>
 </div>
+
+
+<!-- Google Map API Start -->
 <script>
     function myMap() {
         var myCenter = new google.maps.LatLng(42.1291, -80.0851);
@@ -53,3 +60,5 @@
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBeMzxY_r2lBoSOA5ZAprDWHWkJGVxZPc&callback=myMap"></script>
+
+<!-- Google Map API end -->
